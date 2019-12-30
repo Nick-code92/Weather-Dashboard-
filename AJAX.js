@@ -26,7 +26,7 @@ $.ajax({
 }).then(function(response){
     console.log(response)
     $(".city").text(response.name);
-    $(".wind").text(response.wind);
-    $(".humidity").text(response.main);
-    $(".temp").text(response.main);
+    $(".wind").text(response.list.wind);
+    $(".humidity").text(response.list.main);
+    $(".temp").text(response.list.main);
 });
