@@ -8,6 +8,23 @@
 // Include a search history so that users can access their past search terms. Clicking on the city name should perform a new search that returns current and future conditions for that city. 
 // Include a 5-Day Forecast below the current weather conditions. Each day for the 5-Day Forecast should display the following:
 
+$(document).response(function(){
+    $("#city").click(function(){
+        
+    })
+});
 var APIKey = "900f37ff6f8f56e8116ad7f03e56cc9d";
 
-var queryUre = `https://api.openweathermap.org/data/2.5/forecast?q=`;
+ var city = ("city-names")
+
+var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}&units=imperial`;
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function(response){
+    console.log(response)
+    $(".city").text(response.name);
+    $(".wind").text(response.wind);
+    $(".humidity").text(response.main);
+});
