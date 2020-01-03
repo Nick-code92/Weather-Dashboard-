@@ -24,7 +24,7 @@ var APIKey = "900f37ff6f8f56e8116ad7f03e56cc9d";
 var fiveday = function(city){
 
     var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}&units=imperial`;
-    console.log(queryURL);
+    // console.log(queryURL);
     
     $.ajax({
         url: queryURL,
@@ -45,5 +45,6 @@ var fiveday = function(city){
         $(".wind").text(forcast[0].wind.speed);
         $(".humidity").text(forcast[0].main.humidity);
         $(".temp").text(forcast[0].main.temp);
+        // $(".UV").text(forcast[0].)
     });
 }
