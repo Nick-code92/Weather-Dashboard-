@@ -20,6 +20,11 @@ $("#City").on("click", function (e) {
 });
 var APIKey = "900f37ff6f8f56e8116ad7f03e56cc9d";
 
+var currentWeather = function (City) {
+
+    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=imperial`;
+}
+
 //  var city = prompt("city").split(" ").join("+");
 var fiveday = function (city) {
 
