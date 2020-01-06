@@ -36,6 +36,7 @@ var fiveday = function (city) {
         method: "GET"
     }).then(function (response) {
         console.log(response)
+        $("tbody").append(`<tr><td>${response.city}</td><td>${response.wind}</td><td>${response.humidity}</td><td>${response.temp}</td></tr>`);
         var rawforcast = response.list
         var forcast = []
         for (var i = 0; i < rawforcast.length; i++) {
@@ -45,7 +46,7 @@ var fiveday = function (city) {
             }
         }
         console.log(forcast)
-
+        
         $(".city").text(response.city.name);
         $(".wind").text(forcast[0].wind.speed);
         $(".humidity").text(forcast[0].main.humidity);
