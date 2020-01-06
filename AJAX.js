@@ -29,14 +29,14 @@ var currentWeather = function (City) {
 var fiveday = function (city) {
 
     var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}&units=imperial`;
-    // console.log(queryURL);
+    // console.log(queryUR);
+    // $("card-body").append (`<div></div>`)
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response)
-        $("tbody").append(`<tr><td>${response.city}</td><td>${response.wind}</td><td>${response.humidity}</td><td>${response.temp}</td></tr>`);
         var rawforcast = response.list
         var forcast = []
         for (var i = 0; i < rawforcast.length; i++) {
