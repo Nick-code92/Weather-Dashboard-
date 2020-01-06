@@ -15,32 +15,70 @@
 </head>
 
 <body>
-    <div class="jumbotron" style="margin-bottom: 0px; color: white; background-color: black;">
-        <h1 class="text-center" style="font-size: 50px;">Weather Dashboard</h1>
-    </div>
-    <div class="container mt-4">
-        <nav class="navbar navbar-light bg-light">
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" id="city-input" type="text" placeholder="Search"
-                    aria-label="Search">
-                <button id="City" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search City</button>
-            </form>
-        </nav>
-        <div class="city"></div>
-        <div class="wind"></div>
-        <div class="humidity"></div>
-        <div class="temp"></div>
-        <div class="UV"></div>
-
-        <div class="row row-cols-1 row-cols-md-3">
-            <div class="col mb-4">
-              <div class="card h-100">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body">
-                </div>
-              </div>
+    <div class=" header bg-primary">
+        <div class=" text-light p-3 text-center ">
+            <h1>Weather Dashboard</h1>
         </div>
-        
+    </div>
+
+
+    <div class="container">
+
+        <div class="row mt-2 ">
+            <div class="col-md-3">
+                <input id="search" class="form-control" type="text" placeholder="City">
+             
+            </div>
+            <div class="col-md-1">
+                <button id="searchButton" type="submit" class="btn btn-primary pb-2 mt-1">Search</button>
+            </div>
+          
+            <div class="col-md-8 pt-3 mt-3 border border-gray">
+                <h2 id="current"></h2>
+                <h4 id="temp"></h4>
+                <h4 id="humidity"></h4>
+                <h4 id="windSpeed"></h4>
+                <h4 id="uv"></h4>
+
+            </div>
+        </div>
+        <div class="row">
+            <div id="buttonHolder" class="col-md-4  "></div>
+                <div id="day1" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
+                    <p id="d1Date">Day1</p>
+                    <p id="d1Icon"></p>
+                    <p id="d1Humidity" ></p>
+                    <p id="d1Temp"></p>
+                </div>
+                <div id="day2" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
+                    <p id="d2Date">Day2</p>
+                    <p id="d2Icon"></p>
+                    <p id="d2Humidity"></p>
+                    <p id="d2Temp"></p>
+                </div>
+                <div id="day3" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
+                    <p id="d3Date">Day3</p>
+                    <p id="d3Icon"></p>
+                    <p id="d3Humidity"></p>
+                    <p id="d3Temp"></p>
+                </div>
+                <div id="day4" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
+                    <p id="d4Date">Day4</p>
+                    <p id="d4Icon"></p>
+                    <p id="d4Humidity"></p>
+                    <p id="d4Temp"></p>
+                </div>
+                <div id="day5" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
+                    <p id="d5Date">Day5</p>
+                    <p id="d5Icon"></p>
+                    <p id="d5Humidity"></p>
+                    <p id="d5Temp"></p>
+                </div>
+            
+
+
+        </div>
+
 
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
