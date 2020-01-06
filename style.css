@@ -1,0 +1,18 @@
+.jumbotron{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.container-fluid{
+    
+    padding: 50px;
+}
+#search-box{
+    background-color: rgb(248, 245, 245);
+}
+#display-box{
+   padding-left: 50px;
+}
+#button{
+
+}

@@ -15,74 +15,47 @@
 </head>
 
 <body>
-    <div class=" header bg-primary">
-        <div class=" text-light p-3 text-center ">
-            <h1>Weather Dashboard</h1>
-        </div>
-    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Weather Dashboard</h1>
+  </div>
 
+      
+      <div class="container-fluid">
+          <div class= "row">
+               <div class= "col-md-4" class="searches" id= "search-box">
+                  
+                  <form id="search-form" method="POST">
+                      <label for="search-text">Search for a City:</label>
+                      <input type="text"  id="search-text" />
+                      <input id = "search-button" type = "submit" value = "Search" ></input>
+                  </form>
 
-    <div class="container">
+                  <div id="search-list"></div>
+              </div>
+      
+              <div class= "col-md-8" id= "display-box">
 
-        <div class="row mt-2 ">
-            <div class="col-md-3">
-                <input id="search" class="form-control" type="text" placeholder="City">
-             
-            </div>
-            <div class="col-md-1">
-                <button id="searchButton" type="submit" class="btn btn-primary pb-2 mt-1">Search</button>
-            </div>
-          
-            <div class="col-md-8 pt-3 mt-3 border border-gray">
-                <h2 id="current"></h2>
-                <h4 id="temp"></h4>
-                <h4 id="humidity"></h4>
-                <h4 id="windSpeed"></h4>
-                <h4 id="uv"></h4>
-
-            </div>
-        </div>
-        <div class="row">
-            <div id="buttonHolder" class="col-md-4  "></div>
-                <div id="day1" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
-                    <p id="d1Date">Day1</p>
-                    <p id="d1Icon"></p>
-                    <p id="d1Humidity" ></p>
-                    <p id="d1Temp"></p>
-                </div>
-                <div id="day2" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
-                    <p id="d2Date">Day2</p>
-                    <p id="d2Icon"></p>
-                    <p id="d2Humidity"></p>
-                    <p id="d2Temp"></p>
-                </div>
-                <div id="day3" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
-                    <p id="d3Date">Day3</p>
-                    <p id="d3Icon"></p>
-                    <p id="d3Humidity"></p>
-                    <p id="d3Temp"></p>
-                </div>
-                <div id="day4" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
-                    <p id="d4Date">Day4</p>
-                    <p id="d4Icon"></p>
-                    <p id="d4Humidity"></p>
-                    <p id="d4Temp"></p>
-                </div>
-                <div id="day5" class="col-md-1 bg-primary border border-gray text-center text-light pr-5 rounded">
-                    <p id="d5Date">Day5</p>
-                    <p id="d5Icon"></p>
-                    <p id="d5Humidity"></p>
-                    <p id="d5Temp"></p>
-                </div>
-            
-
-
-        </div>
-
-
-    </div>
+              <div id = "current" id= "date-display"></div>
+                  <div class = "city"></div>
+                  <div class = "temp"></div>
+                  <div class = "humidity"></div>
+                  <div class = "wind"></div>
+                  <div class = "uv-index"></div>
+                  
+              <div class= "forecast">
+                  <h4>5- day Forecast:</h4>
+                      <div class= "date"></div>
+                      <div class= "icon"></div>
+                      <div class= "temperature"></div>
+                      <div class= "humid"></div>
+              </div>
+              
+            </div> 
+      </div> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="./AJAX.js"></script>
 </body>
