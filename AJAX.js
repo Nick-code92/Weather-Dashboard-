@@ -47,13 +47,27 @@ $.ajax({
     method: "GET"
 }).then(function(response) {
   console.log(response)
-  for(var i = 5; i< 40; i+8 ){
-    $(".temperature").text("Temp: " + response.list[i].main.temp);
-    $(".humid").text("Humidity: " + response.list[i].main.humidity + "%");
-    $(".icon").img("" + response.list[i].main.weather.icon);
+  var myDays = response.list.filter(function(obj){
+    // console.log(obj_dt.text)
+    return(obj.dt_txt.split(" ")[1] === "15:00:00")
+  });
+  console.log(myDays)
+  $(".forecast").empty()
+  for(var i = 0; i< myDays.length; i ++ ){
+  //  $( ".temperature").text("Temp: " + response.list[i].main.temp);
+  //   $(".humid").text("Humidity: " + response.list[i].main.humidity + "%");
+  //   $(".icon").img("" + response.list[i].main.weather.icon);s
+  $(".forecast").append(`
+        <ul>
+          <li>temp: ${myDays[i].main.temp}</li>
+          <li>humidity: ${myDays[i].main.humidity}</li>
+          <li>wind: ${myDays[i].wind.speed}</li>
+          
+        </ul>
+  `)
     
   }
-showFiveDay();
+// showFiveDay();
 });
 }
 
@@ -86,8 +100,8 @@ function storeSaveCity() {
   localStorage.setItem("saveCity", JSON.stringify(saveCity));
 }
   
-searchButton.addEventListener("submit", function(event) {
-  event.preventDefault();
+searchButton.addEventListener("submit", function(e) {
+  e.preventDefault();
   var inputText = searchInput.value.trim();
   if (inputText === "") {
     return;
@@ -102,6 +116,6 @@ searchButton.addEventListener("submit", function(event) {
   storeSaveCity();
   renderSaveCity();
 
-   var m = moment();
-    var date = m.format("L");
+    var m = moment();
+     var date = m.format("L");
     console.log(date);
